@@ -30,7 +30,8 @@ class BombaCombustivel:
 
 def menu():
     bomba = BombaCombustivel("Gasolina", 1000, 5.49, 5.99)
-    
+    bomba = BombaCombustivel("gasolina",-1000, 5.49, 5.99)
+
     while True:
         print("\nMenu:")
         print("1. Abastecer")
