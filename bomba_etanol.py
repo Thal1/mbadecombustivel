@@ -1,11 +1,5 @@
-class BombaEtanol:
+from bombacombustivel import BombaCombustivel
 
-    def abastecer_com_etanol(self, litros):
-        if litros > self.quantidade_combustivel:
-            print(f"Quantidade insuficiente de etanol na bomba.")
-            return 0
-        else:
-            custo = litros * self.preco_com_aditivo
-            self.quantidade_combustivel -= litros
-            print(f"Abastecido {litros} litros de etanol. Custo: R${custo:.2f}")
-            return custo
+class BombaEtanol(BombaCombustivel):
+    def __init__(self, valor_litro, quantidade_disponivel):
+        super().__init__(valor_litro, quantidade_disponivel)
