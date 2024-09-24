@@ -1,9 +1,4 @@
 class BombaCombustivel:
-    def init(self, tipo_combustivel, quantidade_combustivel, preco_por_litro, preco_com_aditivo):
-        self.tipo_combustivel = tipo_combustivel
-        self.quantidade_combustivel = quantidade_combustivel  # em litros
-        self.preco_por_litro = preco_por_litro  # preço por litro
-        self.preco_com_aditivo = preco_com_aditivo  # preço por litro com aditivo
 
     def abastecer_com_gasolina(self, litros):
         if litros > self.quantidade_combustivel:

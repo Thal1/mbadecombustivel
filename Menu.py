@@ -5,7 +5,7 @@ class BombaCombustivel:
         self.preco_por_litro = preco_por_litro  # preço por litro
         self.preco_com_aditivo = preco_com_aditivo  # preço por litro com aditivo
 
-    def abastecer_com_gasolina(self, litros):
+    def abastecer(self, litros):
         if litros > self.quantidade_combustivel:
             print(f"Quantidade insuficiente de {self.tipo_combustivel} na bomba.")
             return 0
@@ -53,6 +53,7 @@ def menu():
             bomba_etanol.abastecer(litros)
         elif opcao == 3:
             bomba.verificar_quantidade()
+            bomba_etanol.verificar_quantidade()
         elif opcao == 4:
             print("Saindo...")
             break
