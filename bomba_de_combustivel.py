@@ -1,14 +1,30 @@
 class BombaCombustivel:
+    def __init__(self, valor_litro, quantidade_disponivel):
+        self.__valor_litro = valor_litro
+        self.__quantidade_disponivel = quantidade_disponivel
 
-    def abastecer_com_gasolina(self, litros):
-        if litros > self.quantidade_combustivel:
-            print(f"Quantidade insuficiente de {self.tipo_combustivel} na bomba.")
-            return 0
-        else:
-            custo = litros * self.preco_por_litro
-            self.quantidade_combustivel -= litros
-            print(f"Abastecido {litros} litros de {self.tipo_combustivel}. Custo: R${custo:.2f}")
-            return custo
+    def get_valor_litro(self):
+        return self.__valor_litro
+    
+    def get_quantidade_disponivel(self):
+        return self.__quantidade_disponivel
 
-    def verificar_quantidade(self):
-        print(f"Quantidade disponível de {self.tipo_combustivel}: {self.quantidade_combustivel} litros.")
+    def retirar_litros(self, litros):
+        if litros > self.__quantidade_disponivel:
+            return -1
+        self.__quantidade_disponivel -= litros
+        return litros
+
+    def abastecer_por_valor(self, valor):
+        litros = valor / self.__valor_litro
+        if litros > self.__quantidade_disponivel:
+            return -1
+        self.__quantidade_disponivel -= litros
+        return litros
+
+    def abastecer_por_litro(self, litros):
+        if litros > self.__quantidade_disponivel:
+            return -1
+        valor = litros * self.__valor_litro
+        self.__quantidade_disponivel -= litros
+        return valor
