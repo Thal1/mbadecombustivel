@@ -1,4 +1,4 @@
-from bombacombustivel import BombaCombustivel
+from bomba_de_combustivel import BombaCombustivel
 
 class BombaEtanol(BombaCombustivel):
     def __init__(self, valor_litro, quantidade_disponivel):
